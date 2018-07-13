@@ -2,10 +2,8 @@ import { NgModule } from '@angular/core';
 import { MyLibraryComponent } from './my-library.component';
 
 @NgModule({
-  imports: [
-  ],
+  imports: [],
   declarations: [MyLibraryComponent],
   exports: [MyLibraryComponent]
 })
-export class TIXtensionModule {
- }
+export class TIXtensionModule {}

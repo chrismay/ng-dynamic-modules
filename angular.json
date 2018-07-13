@@ -25,7 +25,9 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [ "node_modules/systemjs/dist/system.src.js"]
+            "scripts": [
+              "node_modules/systemjs/dist/system.src.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -154,6 +156,46 @@
             "tsConfig": [
               "projects/my-library/tsconfig.lib.json",
               "projects/my-library/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "domain-interfaces": {
+      "root": "projects/domain-interfaces",
+      "sourceRoot": "projects/domain-interfaces/src",
+      "projectType": "library",
+      "prefix": "dif",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/domain-interfaces/tsconfig.lib.json",
+            "project": "projects/domain-interfaces/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/domain-interfaces/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/domain-interfaces/src/test.ts",
+            "tsConfig": "projects/domain-interfaces/tsconfig.spec.json",
+            "karmaConfig": "projects/domain-interfaces/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/domain-interfaces/tsconfig.lib.json",
+              "projects/domain-interfaces/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"

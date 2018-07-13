@@ -22,6 +22,12 @@
       ],
       "my-library/*": [
         "dist/my-library/*"
+      ],
+      "domain-interfaces": [
+        "dist/domain-interfaces"
+      ],
+      "domain-interfaces/*": [
+        "dist/domain-interfaces/*"
       ]
     }
   }
